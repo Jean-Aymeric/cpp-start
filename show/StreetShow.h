@@ -9,12 +9,15 @@
 #include "Show.h"
 
 namespace show {
-	class StreetShow : Show {
+	class StreetShow : public Show {
 	  private:
-		std::vector<std::string> performers_;
+		std::vector<std::string> *performers_;
 	  public:
-		StreetShow(std::string name, std::string description, ShowType *showType, std::vector<std::string> performers);
-		[[nodiscard]] std::vector<std::string> getPerformers() const;
+		StreetShow(std::string name,
+				   std::string description,
+				   std::vector<std::string> *performers);
+		~StreetShow() = default;
+		[[nodiscard]] std::vector<std::string> *getPerformers() const;
 	};
 }
 #endif //JAD_S_SHOW_SHOW_STREETSHOW_H_

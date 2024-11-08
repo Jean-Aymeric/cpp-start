@@ -8,7 +8,7 @@
 
 using namespace show;
 
-Show::Show(std::string name, std::string description, ShowType *showType) {
+Show::Show(std::string name, std::string description, const ShowType *showType) {
 	this->name_ = std::move(name);
 	this->description_ = std::move(description);
 	this->showType_ = showType;
@@ -22,6 +22,6 @@ std::string Show::getDescription() const {
 	return this->description_;
 }
 
-ShowType *Show::getShowType() const {
+const ShowType *Show::getShowType() const {
 	return this->showType_;
 }

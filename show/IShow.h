@@ -13,7 +13,7 @@ namespace show {
 	  public:
 		[[nodiscard]] virtual std::string getName() const = 0;
 		[[nodiscard]] virtual std::string getDescription() const = 0;
-		[[nodiscard]] virtual ShowType *getShowType() const = 0;
+		[[nodiscard]] virtual const ShowType *getShowType() const = 0;
 	};
 }
 

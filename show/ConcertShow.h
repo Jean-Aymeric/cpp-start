@@ -11,11 +11,11 @@
 
 namespace show {
 
-	class ConcertShow : Show {
+	class ConcertShow : public Show {
 	  private:
 		std::string artist_;
 	  public:
-		ConcertShow(std::string name, std::string description, ShowType *showType, std::string artist);
+		ConcertShow(std::string name, std::string description, std::string artist);
 		[[nodiscard]] std::string getArtist() const;
 	};
 

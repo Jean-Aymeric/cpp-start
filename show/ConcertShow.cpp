@@ -5,8 +5,8 @@
 #include "ConcertShow.h"
 
 namespace show {
-	ConcertShow::ConcertShow(std::string name, std::string description, ShowType *showType, std::string artist) :
-		Show(name, description, showType) {
+	ConcertShow::ConcertShow(std::string name, std::string description, std::string artist) :
+		Show(name, description, &ShowType::CONCERT) {
 		this->artist_ = std::move(artist);
 	}
 

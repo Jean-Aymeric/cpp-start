@@ -5,13 +5,15 @@
 #ifndef JAD_S_SHOW_CUSTOMER_ISPECTATOR_H_
 #define JAD_S_SHOW_CUSTOMER_ISPECTATOR_H_
 #include <string>
+#include "../show/IShow.h"
 
+using namespace show;
 namespace customer {
 	class ISpectator {
 	  public:
-		virtual std::string getFirstName() const = 0;
-		virtual std::string getLastName() const = 0;
-		virtual void watch() const = 0;
+		[[nodiscard]] virtual std::string getFirstName() const = 0;
+		[[nodiscard]] virtual std::string getLastName() const = 0;
+		virtual void watch(IShow *show) const = 0;
 	};
 }
 

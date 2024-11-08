@@ -9,21 +9,20 @@
 #include "MovieType.h"
 
 namespace show {
-	class MovieShow : Show {
+	class MovieShow : public Show {
 	  private:
-		MovieType *movieType_;
+		const MovieType *movieType_;
 		std::string director_;
-		std::vector<std::string> actors_;
+		std::vector<std::string> *actors_;
 	  public:
 		MovieShow(std::string name,
 				  std::string description,
-				  ShowType *showType,
-				  MovieType *movieType,
+				  const MovieType *movieType,
 				  std::string director,
-				  std::vector<std::string> actors);
-		[[nodiscard]] MovieType *getMovieType() const;
+				  std::vector<std::string> *actors);
+		[[nodiscard]] const MovieType *getMovieType() const;
 		[[nodiscard]] std::string getDirector() const;
-		[[nodiscard]] std::vector<std::string> getActors() const;
+		[[nodiscard]] std::vector<std::string> *getActors() const;
 	};
 }
 

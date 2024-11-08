@@ -8,17 +8,18 @@
 #include "IShow.h"
 
 namespace show {
-	class Show : IShow {
+	class Show : public IShow {
 	  private:
 		std::string name_;
 		std::string description_;
-		ShowType *showType_;
+		const ShowType *showType_;
 
 	  public:
-		Show(std::string name, std::string description, ShowType *showType);
+		Show(std::string name, std::string description, const ShowType *showType);
+		~Show() = default;
 		[[nodiscard]] std::string getName() const override;
 		[[nodiscard]] std::string getDescription() const override;
-		[[nodiscard]] ShowType *getShowType() const override;
+		[[nodiscard]] const ShowType *getShowType() const override;
 	};
 }
 #endif //JAD_S_SHOW_SHOW_SHOW_H_
